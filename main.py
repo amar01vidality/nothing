@@ -1,7 +1,3 @@
-"""
-Main entry point for the Telegram AI Trading Bot
-Initializes and starts the bot with proper error handling
-"""
 import sys
 import os
 import signal
@@ -125,14 +121,17 @@ class TradingBot:
         app.router.add_get('/health', self.health_check)
         app.router.add_get('/ready', self.readiness_check)
         app.router.add_get('/metrics', self.metrics_endpoint)
+        app.router.add_get('/', lambda request: web.Response(text="TradeAI Companion Bot is running!", status=200))
         
         runner = web.AppRunner(app)
         await runner.setup()
         
-        site = web.TCPSite(runner, '0.0.0.0', 8080)
+        # Use PORT environment variable for Render deployment
+        port = int(os.environ.get('PORT', 8080))
+        site = web.TCPSite(runner, '0.0.0.0', port)
         await site.start()
         
-        logger.info("Health check server started on port 8080")
+        logger.info(f"Health check server started on port {port}")
         return runner
     
 async def main():
