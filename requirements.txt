@@ -74,13 +74,6 @@ Riskfolio-Lib==7.0.1
 # Technical Analysis
 TA-Lib==0.4.32
 
-# Deep Learning (CPU version for Render)
-torch==2.1.2
-torchvision==0.17.2
-torchaudio==2.1.2
-
-
-
 # Quantitative Finance
 qlib==0.9.6
 
