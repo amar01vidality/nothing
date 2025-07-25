@@ -98,7 +98,7 @@ typing_extensions==4.14.1
 # Additional Dependencies
 websockets==15.0.1
 websocket-client==1.8.0
-urllib3==2.5.0
+urllib3==1.26.18
 charset-normalizer==3.4.1
 certifi==2024.12.14
 idna==3.10
