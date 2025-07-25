@@ -95,13 +95,6 @@ typing_extensions==4.14.1
 # Production Server (already handled above with gunicorn==23.0.0)
 # gunicorn==23.0.0
 
-# Additional Dependencies
-websockets==10.4
-websocket-client==1.8.0
-urllib3==1.26.18
-charset-normalizer==3.4.1
-certifi==2024.12.14
-idna==3.10
 
 # System and Utility
 patsy==1.0.1
