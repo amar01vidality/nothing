@@ -19,7 +19,7 @@ scipy==1.15.3
 scikit-learn==1.7.0
 
 # Financial Data
-yfinance==0.2.65
+yfinance==0.2.60
 
 # Database
 peewee==3.18.2
@@ -96,7 +96,7 @@ typing_extensions==4.14.1
 # gunicorn==23.0.0
 
 # Additional Dependencies
-websockets==15.0.1
+websockets==10.4
 websocket-client==1.8.0
 urllib3==1.26.18
 charset-normalizer==3.4.1
