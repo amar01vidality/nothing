@@ -2,34 +2,30 @@ services:
   - type: web
     name: tradeai-companion
     runtime: python3
-    plan: starter  # Can be upgraded to standard or pro as needed
-    buildCommand: "./build.sh"
-    startCommand: "gunicorn main:app --bind 0.0.0.0:$PORT --workers 2 --worker-class uvicorn.workers.UvicornWorker --timeout 120"
-    healthCheckPath: "/health"
+    plan: starter
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "python main.py"
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.11
       - key: TELEGRAM_API_TOKEN
-        sync: false  # Set this in Render dashboard
+        sync: false
       - key: OPENAI_API_KEY
-        sync: false  # Set this in Render dashboard
+        sync: false
       - key: ALPACA_API_KEY
-        sync: false  # Set this in Render dashboard (optional)
+        sync: false
       - key: ALPACA_API_SECRET
-        sync: false  # Set this in Render dashboard (optional)
+        sync: false
+      - key: ALPACA_BASE_URL
+        value: https://paper-api.alpaca.markets
       - key: CHART_IMG_API_KEY
-        sync: false  # Set this in Render dashboard (optional)
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: tradeai-redis
-          property: connectionString
+        sync: false
       - key: DATABASE_URL
         fromDatabase:
           name: tradeai-db
           property: connectionString
       - key: PORT
-        value: 8080
+        value: 10000
       - key: ENVIRONMENT
         value: production
       - key: PYTHONPATH
@@ -38,6 +34,12 @@ services:
         value: UTC
       - key: APSCHEDULER_TIMEZONE
         value: UTC
+      - key: MPLBACKEND
+        value: Agg
+      - key: PYTHONUNBUFFERED
+        value: 1
+      - key: PIP_NO_CACHE_DIR
+        value: 1
 
   - type: redis
     name: tradeai-redis
