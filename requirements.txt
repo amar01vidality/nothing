@@ -3,8 +3,9 @@ aiohttp==3.12.14
 uvicorn==0.35.0
 waitress==3.0.2
 starlette==0.47.1
-flask
-gunicorn
+flask==3.0.3 # Pin Flask version
+gunicorn==23.0.0 # Keep this one, remove the unpinned 'gunicorn'
+
 # Telegram Bot
 python-telegram-bot==20.7
 
@@ -83,7 +84,6 @@ seaborn==0.13.2
 plotly==5.24.1
 
 # Additional ML/Finance Libraries
-TA-Lib==0.4.32
 xgboost==3.0.2
 
 # Utilities
@@ -92,8 +92,8 @@ tenacity==9.1.2
 termcolor==3.1.0
 typing_extensions==4.14.1
 
-# Production Server
-gunicorn==23.0.0
+# Production Server (already handled above with gunicorn==23.0.0)
+# gunicorn==23.0.0
 
 # Additional Dependencies
 websockets==15.0.1
@@ -125,7 +125,6 @@ xlrd==2.0.1
 # Async HTTP
 httpx==0.28.1
 aiofiles==24.1.0
-
 
 # Additional Utilities
 click==8.1.8
