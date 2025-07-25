@@ -76,7 +76,7 @@ Riskfolio-Lib==7.0.1
 TA-Lib==0.4.32
 
 # Quantitative Finance
-qlib==0.9.6
+
 
 # Visualization
 matplotlib==3.10.0
