@@ -34,7 +34,7 @@ python-redis-lock==4.0.0
 
 # Configuration & Environment
 python-dotenv==1.1.1
-PyYAML==6.0.2
+PyYAML==6.0.1
 
 # HTTP Requests
 requests==2.32.4
