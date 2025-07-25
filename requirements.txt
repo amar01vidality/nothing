@@ -130,7 +130,6 @@ xlrd==2.0.1
 # Async HTTP
 httpx==0.28.1
 aiofiles==24.1.0
-pip freeze > requirements.txt
 
 
 # Additional Utilities
