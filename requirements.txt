@@ -123,7 +123,7 @@ openpyxl==3.1.5
 xlrd==2.0.1
 
 # Async HTTP
-httpx==0.28.1
+httpx==0.25.2
 aiofiles==24.1.0
 
 # Additional Utilities
